@@ -7,6 +7,8 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
+import static javax.persistence.CascadeType.*;
+
 @Entity
 public class Pessoa {
 
@@ -32,7 +34,7 @@ public class Pessoa {
     @Column(nullable = false)
     private LocalDateTime dataCriacao;
 
-    @OneToMany(mappedBy = "pessoa")
+    @OneToMany(mappedBy = "pessoa", cascade = MERGE)
     private Set<Endereco> enderecos = new HashSet<>();
 
     public Pessoa() {
