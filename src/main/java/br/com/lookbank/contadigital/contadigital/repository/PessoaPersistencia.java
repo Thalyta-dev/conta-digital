@@ -9,5 +9,5 @@ import java.util.UUID;
 
 @Repository
 public interface PessoaPersistencia extends JpaRepository<Pessoa, UUID> {
-    Optional<Pessoa> findByCpf(String cpf);
+    Optional<Pessoa> findByCpfOrEmail(String cpf, String email);
 }
